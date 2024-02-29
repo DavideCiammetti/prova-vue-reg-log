@@ -11,11 +11,8 @@
         name: '',
         password_confirm: '',
     });
-    const getToken = async ()=>{
-    await axios.get('/sanctum/csrf-cookie');
-}
+    
     const handleLogin = async ()=>{
-        getToken();
     await axios.post('/register',{
         email:form.value.email,
         password:form.value.password,
