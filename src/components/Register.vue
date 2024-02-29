@@ -9,15 +9,15 @@
         email: '',
         password: '',
         name: '',
-        password_confirm: '',
+        password_confirmation: '',
     });
     
     const handleLogin = async ()=>{
     await axios.post('/register',{
+        name: form.value.name,
         email:form.value.email,
         password:form.value.password,
-        password_confirm: form.value.password_confirm,
-        name: form.value.name,
+        password_confirmation: form.value.password_confirmation,
     });
     console.log('push');
     router.push('/');
@@ -41,7 +41,7 @@
         </div>
         <div>
             <label for="password">password confirm</label>
-            <input type="password" id="password" v-model="form.password_confirm">
+            <input type="password" id="password" v-model="form.password_confirmation">
         </div>
         <div>
             <button>Registrati</button>
